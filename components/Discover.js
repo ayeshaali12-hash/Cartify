@@ -11,13 +11,13 @@ export default function Discover() {
     const [search, setSearch] = useState('');
     const [oldData, setOldData] = useState(productss);
     const [searchList, setSearchList] = useState(oldData);
-    const filterData = txt =>{
-        let newData = oldData.filter(item =>{
-            return item.name.toLowerCase().match(txt.toLowerCase());
-        });
-        // console.log(newData);
-        setSearchList(newData);
-    };
+    // const filterData = txt =>{
+    //     let newData = oldData.filter(item =>{
+    //         return item.name.toLowerCase().match(txt.toLowerCase());
+    //     });
+    //     // console.log(newData);
+    //     setSearchList(newData);
+    // };
 
     return(
       <SafeAreaView style={{paddingTop:Platform.OS==='android'?40:0,backgroundColor:"white", flex:1}}>
@@ -31,7 +31,7 @@ export default function Discover() {
                 value={search}
                 onChangeText={txt=>{
                     setSearch(txt);
-                    filterData(txt);
+                    // filterData(txt);
                 }}
                 placeholder='Search here...' style={styles.serachInput}></TextInput>
                 </View>
@@ -42,7 +42,7 @@ export default function Discover() {
                     style={[styles.icon,{ justifyContent:"center", alignItems:"center"}]}
                     onPress={()=>{
                       setSearch('');
-                      filterData('');
+                      // filterData('');
                     }}>
                         <Image source={{uri:"https://icons.veryicon.com/png/o/miscellaneous/medium-thin-linear-icon/cross-23.png"}} 
                     style={styles.icon}></Image>

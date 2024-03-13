@@ -38,6 +38,8 @@ export default function CategoryDetail(){
             break;
         };
 
+        
+
         itemsToRender.map(item => {
             item.qty = 1;
             item.totalPrice = item.price;
@@ -46,14 +48,18 @@ export default function CategoryDetail(){
         // console.log(itemsToRender)
         return(
         <ScrollView>
-            <View style={{flexDirection: 'row', alignItems:'center', flexWrap:'wrap', margin:10}}
+            <View style={{flexDirection: 'row', alignItems:'center', flexWrap:'wrap', marginTop:25 , marginLeft:20}}>
+            <Text style={{fontSize:20}}>{route.params.data.name}</Text>
+            </View>
+            <View style={{flexDirection: 'row', alignItems:'center', flexWrap:'wrap', margin:10, marginTop: 0}}
             >
+                
                 {itemsToRender.map((item, index) =>(
                 <Pressable key={index} 
                 onPress={()=> {navigation.navigate('Details', {data:item})}}
                 >
 
-                    <View style={{marginHorizontal:10, marginVertical:25}}>
+                    <View style={{marginHorizontal:10, marginVertical:10}}>
                     <Image style={{width:150, height:150, resizeMode: "contain"}} 
                         source={{uri:item.image}}
                     />
