@@ -11,7 +11,8 @@ import Account from './components/Account';
 import Favorite from './components/Favorite';
 import Discover from './components/Discover';
 import Details from './components/Details';
-import {store} from '../new/components/redux/store'
+// import {store} from '../new/components/redux/store'
+import {store} from './components/redux/store'
 import { Provider } from 'react-redux';
 import {MaterialCommunityIcons} from "@expo/vector-icons"
 // import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navigation';
